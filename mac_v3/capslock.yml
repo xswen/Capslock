@@ -1165,7 +1165,7 @@ rules:
       - description: 'command + q = force close app'
         type: basic
         from: { key_code: q, modifiers: { mandatory: [ left_control,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: q , modifiers: [ left_command ] } ]
+        to: [ { key_code: w , modifiers: [ left_command, left_shift ] } ]
         # to: [ { key_code: escape , modifiers: [ left_command,left_option ] } ]  # TODO: May not work
 
       - description: 'q = close app'
@@ -1190,8 +1190,7 @@ rules:
       - description: 'command + w = close all tab of app'
         type: basic
         from: { key_code: w, modifiers: { mandatory: [ left_control,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: w , modifiers: [ left_command ] } ]
-        # to: [ { key_code: w , modifiers: [ left_command,left_option ] } ]  # TODO: May not work
+        to: [ { key_code: w , modifiers: [ left_command,left_option ] } ]  # TODO: May not work
 
       - description: 'w = close tab'
         type: basic
@@ -1202,20 +1201,20 @@ rules:
       #==========================================================#
       # ( a ) --> window management                              #
       #==========================================================#
-      - description: 'control + a = launchpad'
+      - description: 'control + a = expose all'
         type: basic
         from: { key_code: a, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Launchpad' } ]
+        to: [ { key_code: up_arrow , modifiers: [ left_control ] } ]
 
       - description: 'option + a = show desktop'
         type: basic
         from: { key_code: a, modifiers: { mandatory: [ left_option,  right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: f11 } ]
 
-      - description: 'command + a = expose all'
+      - description: 'command + a = alter tab sheet rev'
         type: basic
         from: { key_code: a, modifiers: { mandatory: [ left_control,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: up_arrow , modifiers: [ left_control ] } ]
+        to: [ { key_code: tab , modifiers: [ left_control,left_shift ] } ]
 
       - description: 'a = left desktop'
         type: basic
@@ -1236,10 +1235,10 @@ rules:
         from: { key_code: s, modifiers: { mandatory: [ left_option,  right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: grave_accent_and_tilde , modifiers: [ left_command ] } ]
 
-      - description: 'command + s = alter tab sheet rev'
+      - description: 'command + s = alter tab sheet'
         type: basic
         from: { key_code: s, modifiers: { mandatory: [ left_control,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: tab , modifiers: [ left_control,left_shift ] } ]
+        to: [ { key_code: tab , modifiers: [ left_control] } ]
 
       - description: 's = right desktop'
         type: basic
